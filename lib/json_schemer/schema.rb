@@ -177,7 +177,7 @@ module JSONSchemer
       end
     end
 
-    def validate_instance_boolean(instance, stringified_keys: false, access_mode: @configuration.access_mode, **)
+    def validate_instance_boolean(instance, stringified_keys: @configuration.stringified_keys, access_mode: @configuration.access_mode, **)
       return nil if insert_property_defaults || root.custom_keywords.any?
 
       context = Context.new(instance, [], nil, true, access_mode)
